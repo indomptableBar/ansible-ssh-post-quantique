@@ -1,0 +1,7 @@
+---
+- name: Déployer SSH post-quantique
+  hosts: ssh_servers
+  become: true
+
+  roles:
+    - ssh_pqc
