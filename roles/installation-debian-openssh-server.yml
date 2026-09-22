@@ -1,0 +1,12 @@
+---
+- name: Installer OpenSSH Server
+  ansible.builtin.apt:
+    name: openssh-server
+    state: present
+    update_cache: true
+
+- name: Activer SSH
+  ansible.builtin.systemd:
+    name: ssh
+    enabled: true
+    state: started
