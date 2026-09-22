@@ -1,0 +1,23 @@
+ansible-pqc-ssh/
+├── inventory/
+│   └── hosts.ini
+├── group_vars/
+│   └── all.yml
+├── playbooks/
+│   └── deploy-ssh-pqc.yml
+└── roles/
+    └── ssh_pqc/
+        ├── defaults/
+        │   └── main.yml
+        ├── handlers/
+        │   └── main.yml
+        ├── tasks/
+        │   ├── main.yml
+        │   ├── debian.yml
+        │   └── redhat.yml
+        └── templates/
+            └── sshd_config.d/
+                └── 99-pqc.conf.j2
+
+
+                
