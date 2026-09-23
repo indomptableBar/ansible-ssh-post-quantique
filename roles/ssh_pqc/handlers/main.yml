@@ -1,0 +1,7 @@
+---
+# roles/ssh_pqc/handlers/main.yml
+
+- name: Restart ssh
+  ansible.builtin.systemd:
+    name: "{{ 'ssh' if ansible_os_family == 'Debian' else 'sshd' }}"
+    state: restarted
