@@ -1,0 +1,33 @@
+---
+- name: Vérifier le support ML-KEM
+  hosts: ssh_servers
+  become: true
+
+  tasks:
+
+    - name: Obtenir les KEX disponibles
+      ansible.builtin.command:
+        cmd: ssh -Q kex
+      register: ssh_kex
+      changed_when: false
+
+    - name: Vérifier ML-KEM
+      ansible.builtin.set_fact:
+        mlkem_supported: >-
+          {{ 'mlkem768x25519-sha256' in ssh_kex.stdout_lines }}
+
+    - name: Afficher le résultat
+      ansible.builtin.debug:
+        msg:
+          - "Serveur : {{ inventory_hostname }}"
+          - "ML-KEM supporté : {{ mlkem_supported }}"
+
+    - name: Refuser le déploiement si ML-KEM absent
+      ansible.builtin.assert:
+        that:
+          - mlkem_supported
+        fail_msg: >
+          OpenSSH sur {{ inventory_hostname }} ne supporte pas
+          mlkem768x25519-sha256.
+        success_msg: >
+          ML-KEM est disponible sur {{ inventory_hostname }}.
