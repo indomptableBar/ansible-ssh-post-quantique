@@ -5,14 +5,14 @@ Commande d'execution :
 ansible-playbook -i inventory/hosts.ini playbooks/deploy-ssh-pqc.yml
 
 ansible/
- ├── inventory/
- │   ├── production.ini
- │   └── staging.ini
- ├── group_vars/
+   -inventory/
+     ├── production.ini
+     └── staging.ini
+ ├  -group_vars/
  │   ├── all.yml
  │   ├── debian.yml
  │   └── redhat.yml
- ├── playbooks/
+ ├─- playbooks/
  │   ├── site.yml
  │   ├── webservers.yml
  │   └── hardening.yml
