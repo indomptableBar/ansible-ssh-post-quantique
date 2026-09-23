@@ -1,0 +1,13 @@
+---
+- name: Infrastructure Linux
+  hosts: all
+  become: true
+
+  roles:
+    - common
+    - users
+    - ssh
+    - ssh_pqc
+    - firewall
+    - hardening
+    - audit
