@@ -1,0 +1,34 @@
+nsible-pqc-infrastructure/
+│
+├── ansible.cfg
+├── requirements.yml
+├── README.md
+│
+├── inventory/
+│   ├── production/
+│   │   ├── hosts.yml
+│   │   └── group_vars/
+│   │       ├── all.yml
+│   │       ├── debian.yml
+│   │       └── redhat.yml
+│   └── staging/
+│       ├── hosts.yml
+│       └── group_vars/
+│
+├── playbooks/
+│   ├── bootstrap.yml
+│   ├── ssh.yml
+│   ├── users.yml
+│   ├── hardening.yml
+│   ├── firewall.yml
+│   ├── audit.yml
+│   └── site.yml
+│
+└── roles/
+    ├── common/
+    ├── ssh/
+    ├── ssh_pqc/
+    ├── users/
+    ├── firewall/
+    ├── audit/
+    └── hardening/
