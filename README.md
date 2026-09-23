@@ -8,14 +8,17 @@ ansible/
    -inventory/
      ├── production.ini
      └── staging.ini
+     
  ├  -group_vars/
  │   ├── all.yml
  │   ├── debian.yml
  │   └── redhat.yml
+ 
  ├─- playbooks/
  │   ├── site.yml
  │   ├── webservers.yml
  │   └── hardening.yml
+ 
  └── roles/
      ├── nginx/
      │   ├── tasks/
@@ -25,8 +28,10 @@ ansible/
      │   ├── templates/
      │   └── defaults/
      │       └── main.yml
+     
      └── users/
          ├── tasks/
          │   └── main.yml
          └── defaults/
+         
              └── main.yml
