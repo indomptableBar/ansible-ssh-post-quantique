@@ -35,3 +35,10 @@ ansible/
          └── defaults/
          
              └── main.yml
+
+
+
+
+V2 -> ansible-playbook \
+  -i inventory/production/hosts.yml \
+  playbooks/audit.yml
